@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      font-family: "微软雅黑";
+    }
+
+    #allmap {
+      height: 100%;
+      width: 100%;
+    }
+
+    #r-result {
+      width: 100%;
+    }
+  </style>
+  <!--下边引入百度地图请输入自己的ak -->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=PleasePasteYourAK"></script>
+  <script type="text/javascript" src="../index.js"></script>
+  <title>添加/删除覆盖物</title>
+</head>
+
+<body>
+  <div id="allmap"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+  let data = {}
+  // 百度地图API功能
+  var map = new BMap.Map("allmap");
+  var point = new BMap.Point(116.404, 39.915);
+  let points = [
+    { lng: 116.3717544, lat: 40.0369348687 },
+    { lng: 116.3725859, lat: 40.03697594335 },
+    { lng: 116.3736319, lat: 40.03720596370 },
+    { lng: 116.3744956, lat: 40.0373209733 },
+    { lng: 116.3641942, lat: 40.03051853397 },
+    { lng: 116.3713603, lat: 40.03636627868 },
+    { lng: 116.3724196, lat: 40.0364501796 },
+    { lng: 116.3724625, lat: 40.03580939939 },
+    { lng: 116.371631, lat: 40.03507824541 },
+    { lng: 116.3751983, lat: 40.03627766231 },
+  ]
+  let pointList = points.map(x => new BMap.Point(x.lng, x.lat))
+  let { center, zoom } = autoGetCenterAndZoom(BMap, map, "allmap", points)
+  map.centerAndZoom(center, zoom);
+  let poly = new BMap.Polygon(pointList, { strokeColor: "blue", strokeWeight: 2, strokeOpacity: 0.5 })
+  map.addOverlay(poly)
+</script>

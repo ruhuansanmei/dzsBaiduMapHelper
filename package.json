@@ -1,0 +1,22 @@
+{
+  "name": "dzsbaidumaphelper",
+  "version": "1.0.0",
+  "description": "create to use BaiduMap easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruhuansanmei/dzsBaiduMapHelper.git"
+  },
+  "keywords": [
+    "baiduMap"
+  ],
+  "author": "ruhuansanmei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruhuansanmei/dzsBaiduMapHelper/issues"
+  },
+  "homepage": "https://github.com/ruhuansanmei/dzsBaiduMapHelper#readme"
+}
